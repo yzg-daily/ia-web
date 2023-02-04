@@ -1,0 +1,62 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+    width: 416px;
+    margin: 0 auto;
+    padding: 0 33px;
+    .ant-input {
+        height: 50px;
+    }
+    @media screen and (max-width: @screen-sm) {
+        width: 95%;
+    }
+    .VerifiCodeImgWrap {
+        display: flex;
+        .ant-input {
+            height: 50px;
+        }
+    }
+    .VerifiCodeImg {
+        display: block;
+        width: 150px;
+        height: 50px;
+        margin-left: 10px;
+    }
+    .icon {
+        margin-left: 16px;
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 24px;
+        vertical-align: middle;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+            color: @primary-color;
+        }
+    }
+
+    .other {
+        margin-top: 24px;
+        line-height: 22px;
+        text-align: left;
+
+        .register {
+            float: right;
+        }
+    }
+
+    :global {
+        .antd-pro-login-submit {
+            width: 100%;
+            margin-top: 24px;
+        }
+        .AutoCheckbox {
+            margin-top: 15px;
+            color: #0958df;
+        }
+        .ant-form-explain,
+        .ant-form-extra {
+            color: #ea1e1e;
+        }
+    }
+}

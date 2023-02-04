@@ -1,0 +1,61 @@
+@import '../../global';
+.warp {
+    width: 100%;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        line-height: 30px;
+        h3 {
+            display: flex;
+            margin-bottom: 0;
+            color: #2d2d2d;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        p {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0;
+            color: #e83839;
+            font-size: 16px;
+        }
+    }
+    .body {
+        width: 100%;
+        margin-top: 10px;
+        :global {
+            .ant-table-small {
+                .ant-table-content,
+                .ant-table-scroll,
+                .ant-table-thead {
+                    background-color: #eee;
+                }
+            }
+            .ant-table-body {
+                margin: 0;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.selected-row {
+    background-color: rgba(73, 119, 252, 0.2);
+}
+.editable-row .ant-form-item-explain {
+    position: absolute;
+    top: 100%;
+    font-size: 12px;
+}
+.editable-row .ant-form-explain {
+    position: absolute;
+    margin-top: -4px;
+    font-size: 12px;
+}
+
+.selected-row-dye {
+    background-color: rgba(73, 119, 252, 0.4);
+}
+.delte {
+    margin-left: 10px;
+}

@@ -1,0 +1,220 @@
+@import './qyGlobalVariable';
+
+p {
+    margin: 0;
+}
+
+//noinspection ALL
+.ItemHeader {
+    display: flex;
+    flex: 1;
+    color: @color;
+    font-weight: @font-weight;
+    //noinspection Stylelint
+    //height: @HeaderHeight;
+    //border-bottom: 1px solid #eee;
+    //background-color: rosybrown;
+    //align-content: center;
+    .Item {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        //flex: 1;
+    }
+
+    :global {
+        .ant-tabs {
+            //height: 40px;
+            height: 100%;
+
+            .ant-tabs-bar {
+                border-bottom: none;
+            }
+
+            .ant-tabs-bar,
+            .ant-tabs-nav-container,
+            .ant-tabs-nav-wrap,
+            .ant-tabs-nav-scroll,
+            .ant-tabs-nav,
+            .ant-tabs-tab {
+                height: 100%;
+            }
+
+            .ant-tabs-ink-bar {
+                bottom: 0;
+                height: 2px;
+            }
+        }
+
+        .ant-tabs-tab {
+            margin: 0 !important;
+            padding: 8px 6px !important;
+            color: #92a1b0;
+            font-weight: @font-weight;
+            //height: ;
+            //padding: 3px 15px !important;
+            //Margin: 0 !important;
+        }
+
+        .ant-tabs-bar {
+            margin-bottom: 0 !important;
+        }
+
+        .ant-dropdown-button {
+            .ant-btn-default {
+                display: none;
+                box-shadow: none;
+            }
+
+            .ant-dropdown-trigger {
+                display: block;
+                border-color: transparent !important;
+                transform: rotate(90deg);
+
+                i {
+                    height: 100%;
+                }
+            }
+        }
+
+        .ant-tabs-tab-active {
+            color: @primaryColor;
+        }
+
+        //.card-container > .ant-tabs-card > .ant-tabs-bar {
+        //    border-color: red
+        //}
+    }
+
+    .ItemTitle {
+        width: 100%;
+        color: #222;
+        font-weight: bold;
+        font-size: @fontSize;
+        text-align: left;
+    }
+
+    .ItemRight {
+        //align-self: flex-end;
+        p {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            //padding-right: 10px;
+            text-align: right;
+            cursor: pointer;
+        }
+    }
+
+    .ItemTabs {
+        flex-grow: 2;
+        margin: 0 10px;
+        overflow: hidden;
+    }
+}
+
+.List {
+    margin: 0;
+    padding: 0;
+    //height: ;
+    li {
+        display: flex;
+        //justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .qy-list-badge-title {
+        display: flex;
+        align-items: center;
+    }
+
+    .qy-list-title {
+        flex-grow: 2;
+        padding: 0 3px;
+        overflow: hidden;
+    }
+
+    .qy-list-time {
+        flex: 0 0 130px;
+        color: #777;
+    }
+
+    .sysname,
+    .taskname {
+        color: @color;
+        font-weight: 500;
+    }
+
+    .sysname {
+        color: @primaryColor;
+    }
+
+    .ant-badge-count {
+        border-radius: 5px;
+    }
+
+    .wranList {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.selfBadge {
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    margin-right: 10px;
+    overflow: inherit;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    vertical-align: b;
+    border-radius: 5px;
+}
+.selfBadgeParimy {
+    color: #2267f8;
+    background-color: #d9e5ff;
+}
+.selfBadgeWarn {
+    color: #ff4837;
+    background-color: #ffd9d6;
+}
+.HaveReadList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .selfBadge {
+        flex: 0 0 42px;
+        .no-ready,
+        .yes-ready {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+    .no-ready {
+        flex: 0 0 60px;
+        color: #ff4837;
+        background-color: #ffd9d6;
+    }
+    .yes-ready {
+        flex: 0 0 60px;
+        color: #2267f8;
+        background-color: #d9e5ff;
+    }
+}
+.planList {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.NoticeList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

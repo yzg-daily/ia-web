@@ -1,0 +1,21 @@
+.listItem {
+    width: 100%;
+    margin-top: 5px;
+    .fileLink {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        color: red;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .deleteBtn {
+        visibility: hidden;
+    }
+}
+.listItem:hover {
+    background: #f3f3f3;
+    .deleteBtn {
+        visibility: visible;
+    }
+}

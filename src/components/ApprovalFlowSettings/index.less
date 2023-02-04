@@ -1,0 +1,237 @@
+@import '~antd/es/style/themes/default';
+
+@fontFamily: 'Microsoft YaHei', sans-serif;
+@nodesNumberFontBold: normal bold 16px @fontFamily;
+@nodesNumberFontNormal16: normal 16px @fontFamily;
+@nodesNumberFontNormal: normal 14px @fontFamily;
+
+.nodes-number() {
+    position: relative;
+    margin-bottom: 0;
+    color: #333;
+    font: @nodesNumberFontBold;
+
+    span {
+        &::before {
+            padding-right: 4px;
+            padding-left: 2px;
+            content: ':';
+        }
+    }
+
+    &::before {
+        margin-right: 5px;
+        padding: 0 3px;
+        background-color: #2267f8;
+        content: '';
+    }
+
+    &:last-child {
+        color: #92a1b0;
+        font-size: 12px;
+        &::before {
+            background-color: transparent;
+        }
+    }
+}
+
+.approvalFlowSettings {
+    @MAX_HEIGHT: 92vh;
+
+    display: flex;
+    width: 100%;
+    height: @MAX_HEIGHT;
+
+    .canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        width: 300px;
+        height: @MAX_HEIGHT;
+        overflow: auto;
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+
+        li {
+            display: inline-block;
+            margin: 5px;
+
+            a {
+                padding: 8px;
+                color: #999;
+                text-decoration: none;
+                border: 1px solid #ccc;
+
+                &:hover {
+                    background-color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .panelRight {
+        //display: none;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        width: 300px;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 3px 3px 3px #c8cfd9;
+
+        :global {
+            .ant-input-group {
+                &-wrapper {
+                    margin-bottom: 15px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &-addon {
+                    min-width: 80px;
+                }
+            }
+        }
+    }
+
+    :global {
+        .bpp-properties-panel {
+            display: none;
+        }
+
+        .bjs-container {
+            overflow: auto;
+            background: #fff;
+            background: linear-gradient(90deg, rgba(220, 220, 220, 0.5) 6%, transparent 0),
+                linear-gradient(rgba(192, 192, 192, 0.5) 6%, transparent 0);
+            background-size: 12px 12px;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+    }
+}
+
+.customGlobal {
+    position: relative;
+    :global {
+        .@{ant-prefix} {
+            &-drawer {
+                &-content {
+                    overflow: initial;
+                }
+
+                &-title {
+                    .nodes-number {
+                        .nodes-number();
+                    }
+                }
+
+                &-header {
+                    border-bottom-color: #f1f3f8;
+                }
+
+                &-body {
+                    padding: 10px 24px 0;
+                    &-wrap {
+                        height: 87vh;
+                        overflow: auto;
+                    }
+                    .divider-title {
+                        color: #36445f;
+                        font: @nodesNumberFontBold;
+                        :nth-child(1) {
+                            padding-top: 0;
+                        }
+                    }
+                    .organization-structure {
+                        .nodes-number();
+
+                        margin-bottom: 1em;
+                    }
+                }
+
+                &-footer {
+                    //position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 5.5vh;
+                    padding: 10px 16px;
+                    text-align: right;
+                    background-color: #fff;
+                    border-top: 1px solid #ccc;
+                }
+            }
+
+            &-divider {
+                margin: 24px 0 !important;
+                background-color: #bdc2d1;
+            }
+
+            &-form {
+                &-item-label {
+                    > label {
+                        color: #333;
+                        font: @nodesNumberFontNormal;
+                    }
+                }
+            }
+
+            &-input,
+            &-select,
+            &-tag {
+                color: #bdc2d1;
+                font: @nodesNumberFontNormal;
+            }
+
+            &-tree {
+                &-title {
+                    color: #333;
+                    font: @nodesNumberFontNormal16;
+                }
+                li {
+                    padding: 5px 0;
+                }
+                ul li {
+                    .@{ant-prefix}-tree-title {
+                        color: #333;
+                        font: @nodesNumberFontNormal;
+                    }
+                }
+            }
+
+            &-checkbox-group {
+                &-item {
+                    width: 100%;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #f1f3f8;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    :global {
+        .@{ant-prefix} {
+            &-btn {
+                font: @nodesNumberFontNormal;
+                &[class$='-btn'] {
+                    color: #bdc2d1;
+                }
+            }
+        }
+    }
+}

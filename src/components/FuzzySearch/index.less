@@ -1,0 +1,35 @@
+.down-menu {
+    position: relative;
+    ul {
+        position: absolute;
+        top: 36px;
+        z-index: 9999;
+        display: none;
+        height: 300px;
+        padding: 10px 15px;
+        overflow: auto;
+        background-color: #fff;
+        border: 1px solid #40a9ff;
+        border-radius: 10px;
+        &.active {
+            display: block;
+        }
+        li {
+            padding: 10px 15px;
+            line-height: 2;
+            cursor: pointer;
+            &:hover {
+                color: #fff;
+                background-color: #40a9ff;
+            }
+        }
+    }
+}
+:global {
+    .ant-select-auto-complete.ant-select {
+        .ant-input {
+            height: auto;
+            line-height: initial;
+        }
+    }
+}

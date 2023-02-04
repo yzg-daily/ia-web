@@ -1,0 +1,151 @@
+.qyDrawer.ant-drawer-open {
+    top: 74px;
+    height: calc(100% - 74px) !important;
+}
+.qyDrawer {
+    position: absolute !important;
+
+    .ant-spin-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .ant-drawer-content {
+        background-color: #fff;
+    }
+
+    .ant-drawer-content-wrapper {
+        width: 55%;
+        height: auto !important;
+    }
+
+    .ant-tabs-bar {
+        background-color: #fff;
+    }
+
+    .ant-tabs.ant-tabs-card {
+        .ant-tabs-card-bar {
+            .ant-tabs-nav-container {
+                height: 60px;
+            }
+
+            .ant-tabs-tab {
+                width: 140px;
+                height: 60px;
+                margin-right: 0;
+                color: #333;
+                line-height: 60px;
+                text-align: center;
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+            }
+
+            .ant-tabs-tab-active {
+                color: #fff;
+                background-color: #2267f8;
+            }
+        }
+    }
+
+    .ant-card-head {
+        color: #fff;
+        background-color: #2267f8;
+    }
+
+    .qyCard {
+        .ant-card-head-title {
+            text-align: center;
+        }
+
+        .ant-card-body {
+            span {
+                display: inline-block;
+                width: 50%;
+                padding: 19.5px;
+                color: #999;
+                text-align: center;
+                cursor: no-drop;
+            }
+        }
+    }
+
+    .item-wrap {
+        display: flex;
+        background-color: #fff;
+
+        .filstTitle {
+            display: flex;
+            flex: 0 0 140px;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            background-color: #2267f8;
+        }
+
+        .col-p {
+            width: 100%;
+
+            span {
+                display: inline-block;
+                width: calc(100% / 8);
+                height: 60px;
+                color: #999;
+                line-height: 60px;
+                text-align: center;
+                background-color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .qyDrawer-item {
+        position: relative;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        float: left;
+        margin-bottom: 0;
+        font-family: Microsoft YaHei;
+        .title {
+            position: relative;
+            margin: 0;
+            color: #2267f8;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            li {
+                display: flex;
+                align-items: center;
+                min-width: 213px;
+                height: 45px;
+                // padding: 0 100px 0 0;
+                color: #36445f;
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                line-height: 45px;
+                cursor: pointer;
+                &:last-child {
+                    padding: 0;
+                }
+                .anticon svg {
+                    width: 20px;
+                    height: 16px;
+                    margin-right: 9px;
+                }
+            }
+            li:hover {
+                color: #2267f8 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+@import './qyGlobalVariable';
+
+.fullH {
+    height: 100%;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.bgf {
+    background-color: @white;
+}
+
+.itemH {
+    height: @itemHeight;
+    padding: 0 10px;
+    background-color: @white;
+
+    .ant-spin-nested-loading,
+    .ant-spin-container {
+        height: 100%;
+    }
+    .ant-empty {
+        //height: calc(100% - @itemHeaderHeight);
+        position: relative;
+        top: 50%;
+        margin-top: -85px; //  ant-empty （heihet / 2 ）+ （@itemHeaderHeight / 2）
+        .ant-empty-description {
+            color: #92a1b0;
+        }
+    }
+}
+
+.ItemHeader {
+    height: @itemHeaderHeight;
+}
+
+.lucency {
+    background-color: transparent;
+}
+
+.p0 {
+    padding: 0;
+}
+
+.businessItem {
+    overflow: hidden;
+    background-color: @white;
+    .businessItemCol {
+        height: (@itemHeight + 10) / 2;
+        cursor: pointer;
+    }
+
+    .businessItemCol > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: @white;
+        .name {
+            color: #000;
+            font-size: 16px;
+        }
+        .IconFont {
+            font-size: 54px;
+        }
+    }
+}
+
+@qyListHeight: @itemHeight - @itemHeaderHeight;
+@qyListLiHeight: (@qyListHeight - 10) / 10;
+ul.qy-list {
+    height: @qyListHeight;
+    padding: 5px 0;
+    overflow: hidden;
+    color: @color;
+
+    li {
+        height: @qyListLiHeight;
+        line-height: @qyListLiHeight;
+
+        span {
+            overflow: hidden;
+        }
+    }
+}
+
+.headerTop {
+    height: 155px * @MOM;
+    overflow: hidden;
+}
+
+.Carouse {
+    height: @CarouseHeight;
+
+    :global {
+        .ant-carousel,
+        .slick-slider,
+        .slick-list,
+        .slick-track {
+            height: 100%;
+        }
+
+        .ant-carousel:nth-child(1) div,
+        .ant-carousel:nth-child(1) div img {
+            height: 100%;
+        }
+    }
+}
+
+@QuickEntryRowHeight: calc(100% - @itemHeaderHeight);
+.QuickEntry {
+    height: 100%;
+    padding: 0 10px;
+    background-color: @white;
+
+    .QuickEntry-Row {
+        height: @QuickEntryRowHeight;
+        .ant-spin-nested-loading,
+        .ant-spin-container {
+            height: 100%;
+        }
+        .ant-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100% / 2;
+            padding: 0 5px;
+            cursor: pointer;
+            span {
+                display: block;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-align: center;
+                text-overflow: ellipsis;
+                .IconFont {
+                    color: #32c6a2;
+                    font-size: 34px;
+                }
+            }
+        }
+        .ant-col:hover {
+            color: #2267f8;
+            .IconFont {
+                color: #2267f8;
+            }
+        }
+    }
+}

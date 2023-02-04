@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--    <script src="https://webapi.amap.com/maps?v=2.0&key=97f7ebb362898a81a98bb42c7dbd0708&plugin=AMap.DistrictSearch"  async="async"  type="text/javascript"></script>-->
+<!--    <script src="https://webapi.amap.com/ui/1.1/main.js"  async="async"  type="text/javascript"></script>-->
+    <title>内部关联交易系统</title>
+    <link
+            rel="icon"
+            href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAABBCAYAAACel4eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJFREI2QjcxQ0Y4NTExRTlCMzY2RjVCNTkzNEYyQzM2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJFREI2QjcyQ0Y4NTExRTlCMzY2RjVCNTkzNEYyQzM2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkVEQjZCNkZDRjg1MTFFOUIzNjZGNUI1OTM0RjJDMzYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkVEQjZCNzBDRjg1MTFFOUIzNjZGNUI1OTM0RjJDMzYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6t9BdhAAAGFUlEQVR42uxa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"
+            type="image/x-icon"
+    />
+    <script>window.publicPath = '/api/basel';</script>
+    <script>window.publicPath2 = '/usercenter';</script>
+    <script>window.publicEnms = '/api/enms';</script>
+
+    <script>window.publicPath3 = '/api/basel/party';</script>
+    <script>window.publicPaths = {
+            'statistics': '/statistics',
+        };</script>
+</head>
+<body>
+<noscript>内部关联交易系统</noscript>
+<div id="root">
+    <style>
+        html,
+        body,
+        #root {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-loading-warp {
+            padding: 98px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ant-spin {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.65);
+            font-size: 14px;
+            font-variant: tabular-nums;
+            line-height: 1.5;
+            list-style: none;
+            -webkit-font-feature-settings: 'tnum';
+            font-feature-settings: 'tnum';
+            position: absolute;
+            display: none;
+            color: #1890ff;
+            text-align: center;
+            vertical-align: middle;
+            opacity: 0;
+            -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+            transition: -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+            transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+            transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86),
+            -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        }
+
+        .ant-spin-spinning {
+            position: static;
+            display: inline-block;
+            opacity: 1;
+        }
+
+        .ant-spin-dot {
+            position: relative;
+            display: inline-block;
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .ant-spin-dot-item {
+            position: absolute;
+            display: block;
+            width: 9px;
+            height: 9px;
+            background-color: #1890ff;
+            border-radius: 100%;
+            -webkit-transform: scale(0.75);
+            -ms-transform: scale(0.75);
+            transform: scale(0.75);
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            opacity: 0.3;
+            -webkit-animation: antSpinMove 1s infinite linear alternate;
+            animation: antSpinMove 1s infinite linear alternate;
+        }
+
+        .ant-spin-dot-item:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+
+        .ant-spin-dot-item:nth-child(2) {
+            top: 0;
+            right: 0;
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
+
+        .ant-spin-dot-item:nth-child(3) {
+            right: 0;
+            bottom: 0;
+            -webkit-animation-delay: 0.8s;
+            animation-delay: 0.8s;
+        }
+
+        .ant-spin-dot-item:nth-child(4) {
+            bottom: 0;
+            left: 0;
+            -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+        }
+
+        .ant-spin-dot-spin {
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-animation: antRotate 1.2s infinite linear;
+            animation: antRotate 1.2s infinite linear;
+        }
+
+        .ant-spin-lg .ant-spin-dot {
+            font-size: 32px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .ant-spin-lg .ant-spin-dot i {
+            width: 14px;
+            height: 14px;
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .ant-spin-blur {
+                background: #fff;
+                opacity: 0.5;
+            }
+        }
+
+        @-webkit-keyframes antSpinMove {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes antSpinMove {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes antRotate {
+            to {
+                -webkit-transform: rotate(405deg);
+                transform: rotate(405deg);
+            }
+        }
+
+        @keyframes antRotate {
+            to {
+                -webkit-transform: rotate(405deg);
+                transform: rotate(405deg);
+            }
+        }
+    </style>
+    <div
+            style="display: flex;justify-content: center;align-items: center;flex-direction: column;min-height: 420px;height: 100%;"
+    >
+        <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAABBCAYAAACel4eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJFREI2QjcxQ0Y4NTExRTlCMzY2RjVCNTkzNEYyQzM2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJFREI2QjcyQ0Y4NTExRTlCMzY2RjVCNTkzNEYyQzM2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkVEQjZCNkZDRjg1MTFFOUIzNjZGNUI1OTM0RjJDMzYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkVEQjZCNzBDRjg1MTFFOUIzNjZGNUI1OTM0RjJDMzYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6t9BdhAAAGFUlEQVR42uxa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"
+                width="32"
+                style="margin-right: 8px;"
+        />
+        <h1>内部关联交易系统</h1>
+        <div class="page-loading-warp">
+            <div class="ant-spin ant-spin-lg ant-spin-spinning">
+                        <span class="ant-spin-dot ant-spin-dot-spin"
+                        ><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i
+                            ><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i
+                            ></span>
+            </div>
+        </div>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            内部关联交易系统
+        </div>
+    </div>
+</div>
+</body>
+</html>

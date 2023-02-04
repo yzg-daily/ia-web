@@ -1,0 +1,182 @@
+@import '../../qyGlobalVariable';
+
+@pNumber: 19.5px;
+@itemW: 140px;
+@DrawerTop: 74px;
+@gap: 25px;
+.qyDrawer.ant-drawer-open {
+    top: @DrawerTop;
+    height: calc(100% - @DrawerTop) !important;
+}
+.qyDrawer {
+    position: absolute !important;
+
+    .ant-spin-container {
+        display: flex;
+    }
+    .ant-drawer-content {
+        background-color: #fff;
+    }
+
+    .ant-drawer-content-wrapper {
+        height: auto !important;
+    }
+
+    .ant-tabs-bar {
+        background-color: #fff;
+    }
+
+    .ant-tabs.ant-tabs-card {
+        .ant-tabs-card-bar {
+            .ant-tabs-nav-container {
+                height: 60px;
+            }
+
+            .ant-tabs-tab {
+                width: @itemW;
+                height: 60px;
+                margin-right: 0;
+                color: @color;
+                line-height: 60px;
+                text-align: center;
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+            }
+
+            .ant-tabs-tab-active {
+                color: #fff;
+                background-color: @primaryColor;
+            }
+        }
+    }
+
+    .ant-card-head {
+        color: #fff;
+        background-color: @primaryColor;
+    }
+
+    .qyCard {
+        .ant-card-head-title {
+            text-align: center;
+        }
+
+        .ant-card-body {
+            span {
+                display: inline-block;
+                width: 50%;
+                padding: @pNumber;
+                color: #999;
+                text-align: center;
+                cursor: no-drop;
+
+                //height:  calc(100% / 2)
+            }
+        }
+    }
+
+    .item-wrap {
+        display: flex;
+        background-color: #fff;
+
+        .filstTitle {
+            display: flex;
+            flex: 0 0 @itemW;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            background-color: @primaryColor;
+        }
+
+        .col-p {
+            width: 100%;
+
+            span {
+                display: inline-block;
+                width: calc(100% / 8);
+                height: 60px;
+                color: #999;
+                line-height: 60px;
+                text-align: center;
+                background-color: #fff;
+                cursor: pointer;
+                //padding: @pNumber;
+            }
+        }
+    }
+
+    .qyDrawer-item {
+        position: relative;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        //display: inline-block;
+        float: left;
+        margin-bottom: 0;
+        font-family: PingFang SC;
+        .title {
+            position: relative;
+            margin: 0;
+            // padding-left: @gap;
+            color: #2267f8;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 40px;
+        }
+        .title::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 2px;
+            background: #2267f8;
+            border-radius: 1px;
+            content: '';
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 200px;
+            min-height: 150px;
+            margin: 0;
+            padding: 10px 0;
+            text-align: center;
+            li {
+                min-width: 150px !important;
+                height: 45px;
+                padding: 0 @gap;
+                color: #666;
+                font-size: 16px;
+                line-height: 45px;
+                //box-sizing: border-box;
+                //float: left;
+            }
+            li:hover {
+                color: #fff !important;
+                background: linear-gradient(90deg, #2267f8 0%, #7ca6ff 100%);
+            }
+        }
+    }
+
+    .qyDrawer-item::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(100deg, #8db2ff 0%, #dce7ff 50%, #fff 80%);
+        content: '';
+    }
+    .qyDrawer-item:last-child::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+}

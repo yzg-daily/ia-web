@@ -1,0 +1,214 @@
+@p15: 15px;
+@height30: 30px;
+@height40: 40px;
+@height34: 34px;
+@height80: 80px;
+:global {
+    .ant-layout-header {
+        height: auto;
+        background-color: #fff;
+    }
+    .ant-tooltip {
+        .ant-tooltip-inner {
+            background-color: #001529;
+        }
+    }
+    .ant-tooltip-arrow {
+        &::before {
+            background-color: #001529;
+        }
+    }
+    .ant-pro-top-nav-header-logo {
+        display: flex;
+        justify-content: space-around;
+        width: 242px;
+        padding: 10px 20px;
+        h1 {
+            color: #e83839;
+        }
+    }
+    .ant-pro-sider-menu-logo {
+        border-bottom: 1px solid #fff;
+    }
+    .ant-pro-basicLayout-content {
+        padding: 24px 10px !important;
+    }
+    .ant-layout-content {
+        margin: 0 !important;
+    }
+}
+
+.header {
+    height: auto;
+    line-height: normal;
+    background-color: #fff;
+}
+
+.layout {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.navWarp {
+    display: flex;
+    justify-content: center;
+    line-height: @height40;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    p {
+        display: inline-block;
+        margin-bottom: unset;
+        padding-right: @p15;
+        color: #7a7a7a;
+        .tel {
+            color: #09f;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-end;
+    width: 202px;
+    // height: 36px;
+    background: url('../assets/logo.png') no-repeat center;
+    &::after {
+        display: block;
+        width: 1px;
+        height: 40px;
+        margin-right: -20px;
+        background-color: #e83839;
+        opacity: 0.5;
+        content: '';
+    }
+}
+
+.topbar {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    height: @height80;
+    padding: 20px;
+
+    .nav {
+        display: flex;
+        height: @height40;
+        background-color: #fff;
+        a {
+            display: inline-block;
+            padding-right: 15px;
+            padding-left: 15px;
+            color: #333;
+            font-size: 16px;
+            font-family: 'MicrosoftYaHei', sans-serif;
+            line-height: @height40;
+            transition: 0.75s;
+            &::after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                // height: 2px;
+                background-color: transparent;
+                transition: 0.75s;
+                content: '';
+            }
+        }
+        a.active {
+            position: relative;
+            color: #e83839;
+            &::after {
+                background-color: #e83839;
+            }
+        }
+        a:hover {
+            color: orangered;
+        }
+        .dropDown {
+            color: #fff;
+            background-color: #e83839 !important;
+        }
+    }
+}
+
+.login {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 10px;
+    color: blue;
+    line-height: @height40;
+    a {
+        font-size: 16px;
+    }
+    span {
+        cursor: pointer;
+        &.logout {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        &:last-child {
+            margin-left: 10px;
+        }
+    }
+}
+.loginLeft {
+    display: flex;
+    align-items: center;
+
+    .IconFont {
+        font-size: 25px;
+        vertical-align: middle;
+    }
+    .btn {
+        color: #92a1b0;
+    }
+}
+.tel {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.footer {
+    color: #fff;
+    background-color: #232323;
+    a {
+        color: #fff;
+    }
+    .qrCode {
+        width: 118px;
+        height: 118px;
+        background: rgba(255, 255, 255, 1);
+        img {
+            width: 105px;
+            height: 105px;
+        }
+    }
+}
+
+.topNav {
+    @height: 40px;
+
+    display: block;
+    height: @height;
+    color: #fff;
+    line-height: @height;
+    background-color: #4eae72;
+    .warp {
+        width: 1200px;
+        margin: 0 auto;
+        :global {
+            .ant-breadcrumb {
+                line-height: @height;
+                a,
+                .ant-breadcrumb-separator {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
